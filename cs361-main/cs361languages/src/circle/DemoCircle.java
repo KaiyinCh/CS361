@@ -4,10 +4,10 @@
 package circle;
 
 /**
- * @author ADD YOUR NAME
+ * @author HAMSIRA PATHAN & KAIYIN CHEN
  *
  */
-public class DemoCircle {
+public class DemoCircle implements Cloneable {
 
 	/**
 	 * @param args
@@ -54,10 +54,28 @@ public class DemoCircle {
 		c2.radius = 6.0;
 		
 		// TODO print c1 with toString
-		System.out.println(c1.toString());
+		System.out.println("c1 toString: " + c1.toString());
+		
 		// TODO print c2 with toString
+		System.out.println("c2 toString: " + c2.toString());
+		
 		// TODO make a deep copy of c1 with clone and assign it to c3
+		Circle c3 = new Circle();
+
+ 		try {
+ 			c3 = (Circle) c1.clone();
+ 		} catch (CloneNotSupportedException e) {
+ 			throw new RuntimeException("This class does not implement Cloneable.");
+ 		}
 		// TODO write a conditional that checks that c3.equals(c1) is true and print "c3.equals(c1) is true" or "c3.equals(c1) is false" otherwise
+ 		if(c3.equals(c1)) {
+ 			System.out.println("c3.equals(c1) is true");
+ 		} else {
+ 			System.out.println("c3.equals(c1) is false");
+ 		}
+
+
+ 	}
 
 	}
 

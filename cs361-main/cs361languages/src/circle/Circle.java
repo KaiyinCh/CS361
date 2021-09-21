@@ -4,13 +4,13 @@
 package circle;
 
 /**
- * @author ADD YOUR NAME 
+ * @author HAMSIRA PATHAN & KAIYIN CHEN
  *
  */
 
 // TODO Complete the code
 
-public class Circle extends GraphicObject {
+public class Circle extends GraphicObject implements Cloneable {
 
 	// No use of encapsulation
 	public double centerX, centerY;
@@ -61,6 +61,7 @@ public class Circle extends GraphicObject {
 	@Override
 	public String toString() {
 		return super.toString();
+		return "Circle: centerX = " + this.centerX + " centerY = " + this.centerY + " radius = " + this.radius;
 	}
 
 	// TODO To complete
@@ -71,16 +72,21 @@ public class Circle extends GraphicObject {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		return super.equals(obj);
+		Circle tempCircle = (Circle) obj;
+ 		if(this.centerX == tempCircle.centerX && this.centerY == tempCircle.centerY && this.radius == tempCircle.radius) {
+ 			return true;
+ 		} else {
+ 			return false;
+ 		}
 	}
 
 	// TODO To complete
 	/**
 	 * @return an exact copy of the Circle that is a new instance 
 	 */
-	// @Override
-	// protected Object clone() throws CloneNotSupportedException {
-	// return super.clone();
-	// }
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+	return super.clone();
+	}
 
 }
